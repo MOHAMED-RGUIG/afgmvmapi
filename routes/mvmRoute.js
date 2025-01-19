@@ -50,16 +50,16 @@ router.get('/getallmouvementsgraphique', async (req, res) => {
         // Construire la requête SQL avec ou sans filtre
         const query = reference
             ? `
-                SELECT rguig_inventaire_afg.mouvement.*, rguig_inventaire_afg.users.NOMUSR 
+                SELECT *
                 FROM rguig_inventaire_afg.mouvement 
-                JOIN rguig_inventaire_afg.users ON rguig_inventaire_afg.mouvement.idUsr = users.idUser
+              
                 WHERE rguig_inventaire_afg.mouvement.referenceArticle = ?
                 ORDER BY mvmDate DESC
             `
             : `
-                SELECT rguig_inventaire_afg.mouvement.*, rguig_inventaire_afg.users.NOMUSR 
+                SELECT*
                 FROM rguig_inventaire_afg.mouvement 
-                JOIN rguig_inventaire_afg.users ON rguig_inventaire_afg.mouvement.idUsr = rguig_inventaire_afg.users.idUser
+             
                 ORDER BY mvmDate DESC
             `;
 
