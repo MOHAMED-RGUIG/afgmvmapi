@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
 
     try {
         const [rows] = await pool1.query(
-            'SELECT * FROM rguig_inventaire_afg.USERS WHERE EMAILUSR = ? AND MotDePasse = ?',
+            'SELECT * FROM rguig_inventaire_afg.users WHERE EMAILUSR = ? AND MotDePasse = ?',
             [email, password]
         );
 
